@@ -8,6 +8,7 @@ public class PlayerInputs : MonoBehaviour
 
     public bool jumpButton;
     public bool keepJumping;
+    public bool attackButton;
 
     // Start is called before the first frame update
     void Start()
