@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
             jumpTimeCounter = jumpTime;
-            gravityMultiplier = 2;
+            gravityMultiplier = 1;
         }
 
         if (!isGrounded)
@@ -78,9 +78,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && jumpButton)
         {
-            animator.SetTrigger("jump");
             velocity.y = Mathf.Sqrt(jumpForce * -2f * playerFallSpeed);
-            gravityMultiplier = 4;
+            gravityMultiplier = 3;
             print("JUMPING!");
         }
 

@@ -6,7 +6,7 @@ public class PlayerAnimHandler : MonoBehaviour
 {
     PlayerInputs playerInputs;
     PlayerMovement playerMovement;
-    Animator animator;
+    public Animator animator;
 
     float moveSpeed;
     float fallingSpeed;
