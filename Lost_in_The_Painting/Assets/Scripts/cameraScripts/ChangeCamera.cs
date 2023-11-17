@@ -11,18 +11,22 @@ public class ChangeCamera : MonoBehaviour
 
     private void Start()
     {
+
         if(this.transform.tag == "PlayerCamera")
         {
+            print("false");
             isStaticCam = false;
         }
         if (this.transform.tag == "StaticCamera")
         {
+            print("true");
             isStaticCam = true;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        print(other);
         if(other.transform.tag == "Player")
         {
             if (isStaticCam)
