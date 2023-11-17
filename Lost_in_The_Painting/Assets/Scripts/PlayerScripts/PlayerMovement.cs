@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     PlayerInputs playerInputs;
+    PlayerAttack playerAttack;
     CharacterController controller;
     Animator animator;
     public Transform groundCheck;
@@ -22,17 +23,21 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime;
     public float moveSpeed;
     public float jumpForce;
+    float originalMoveSpeed;
 
     public bool isGrounded;
     bool jumpButton;
     bool keepJumping;
     bool facingRight = true;
 
+
     Vector3 moveDirection;
     public Vector3 velocity;
 
     private void Start()
     {
+        originalMoveSpeed = moveSpeed;
+        playerAttack = GetComponent<PlayerAttack>();
         animator = GetComponentInChildren<Animator>();
         playerInputs = GetComponent<PlayerInputs>();
         controller = GetComponent<CharacterController>();
@@ -49,8 +54,12 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleAll()
     {
+        
         Movement();
         FlipPlayer();
+
+            
+        
     }
 
     //all player movement is here: Jumping, falling, and walking etc.
@@ -78,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && jumpButton)
         {
+            animator.SetTrigger("jump");
             velocity.y = Mathf.Sqrt(jumpForce * -2f * playerFallSpeed);
             gravityMultiplier = 3;
             print("JUMPING!");
@@ -94,7 +104,8 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeCounter = 0;
         }
     }
-    
+
+
     //Flips players sprite gameobjects X scale
     void FlipPlayer()
     {
@@ -119,5 +130,6 @@ public class PlayerMovement : MonoBehaviour
     {
         jumpButton = playerInputs.jumpButton;  
         keepJumping = playerInputs.keepJumping;
+
     }
 }

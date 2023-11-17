@@ -13,7 +13,6 @@ public class PlayerAnimHandler : MonoBehaviour
 
     bool grounded;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -47,9 +46,9 @@ public class PlayerAnimHandler : MonoBehaviour
 
         grounded = playerMovement.isGrounded;
 
-        animator.SetFloat("fall", fallingSpeed);
-        animator.SetFloat("velocity", moveSpeed);
-        animator.SetBool("grounded", grounded);
-        
+
+        animator.SetFloat("FallVelocity", fallingSpeed);
+        animator.SetFloat("MoveVelocity", moveSpeed);
+        animator.SetBool("Grounded", grounded);
     }
 }
