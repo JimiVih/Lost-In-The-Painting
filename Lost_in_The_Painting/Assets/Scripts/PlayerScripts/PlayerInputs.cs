@@ -4,37 +4,27 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
-    PlayerAttack playerAttack;
     public Vector3 moveDirection;
 
     public bool jumpButton;
     public bool keepJumping;
-    public bool attack;
-    bool cooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerAttack = GetComponent<PlayerAttack>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        cooldown = playerAttack.cooldown;
         HandleAllInputs();
     }
 
     void HandleAllInputs()
     {
-        
-        
         MoveInput();
-        if (!cooldown)
-        {
-            JumpInput();
-        }      
-        AttackInput();
+        JumpInput();
     }
 
     //reads Horizontal and Vertical inputs that are taken by the "moveDirection" Vector3
@@ -65,17 +55,6 @@ public class PlayerInputs : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space)) 
         {
             keepJumping = false;
-        }
-    }
-    void AttackInput()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            attack = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            attack = false;
         }
     }
 }
