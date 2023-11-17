@@ -89335,6 +89335,7 @@ MonoBehaviour:
   jumpButton: 0
   keepJumping: 0
   attack: 0
+  runButton: 0
 --- !u!95 &5282908029652758067
 Animator:
   serializedVersion: 5
@@ -89685,7 +89686,8 @@ MonoBehaviour:
   radius: 0.2
   gravityMultiplier: 2
   jumpTime: 0.2
-  moveSpeed: 5
+  walkingSpeed: 5
+  runningSpeed: 8
   jumpForce: 1
   isGrounded: 0
   velocity: {x: 0, y: 0, z: 0}
