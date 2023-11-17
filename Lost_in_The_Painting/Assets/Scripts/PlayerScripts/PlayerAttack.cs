@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
     PlayerInputs playerInputs;
     PlayerMovement playerMovement;
 
+    Animator animator;
+
     public SphereCollider attackHitbox;
 
     public float timeCounter;
@@ -17,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         timeCounter = timerAmount;
         playerMovement = GetComponent<PlayerMovement>();
         playerInputs = GetComponent<PlayerInputs>();
@@ -34,6 +37,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!cooldown && attack && playerMovement.isGrounded)
         {
+            animator.SetTrigger("Attack");
             attackHitbox.enabled = false;
             cooldown = true;
         }
