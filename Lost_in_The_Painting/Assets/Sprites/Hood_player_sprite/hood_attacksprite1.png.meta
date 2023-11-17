@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a80a5675af12d5a42a327d1f9515f3b2
+guid: daa6013a852ae4845a1407c09ca41736
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,9 +113,9 @@ TextureImporter:
       name: hood_attacksprite1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 7
         y: 2
-        width: 32
+        width: 25
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33b1beb51d41e744e846cb503749be48
-      internalID: 963381235
+      spriteID: 9704c3025d49a1746bc83747d4e117c1
+      internalID: 1263905539
       vertices: []
       indices: 
       edges: []
@@ -134,9 +134,9 @@ TextureImporter:
       name: hood_attacksprite1_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 38
         y: 2
-        width: 33
+        width: 27
         height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 218292d26e2af434794e87d26206b442
-      internalID: -1649790935
+      spriteID: 6c71d8f7eaa8e014b94276d39d2b0fd4
+      internalID: 675277606
       vertices: []
       indices: 
       edges: []
@@ -155,9 +155,9 @@ TextureImporter:
       name: hood_attacksprite1_2
       rect:
         serializedVersion: 2
-        x: 65
+        x: 69
         y: 2
-        width: 26
+        width: 22
         height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba5724a8dd23ebe479e05631710b5a8e
-      internalID: -294648914
+      spriteID: 328752515d4da0c468eed2671143eb37
+      internalID: -448279571
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d05f657c8d3de2943b814f52ffd1275d
-      internalID: -871925431
+      spriteID: 4a1c4d9c51b446f42949e8b869345d1e
+      internalID: -2078048059
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd1eb5013ea840b4b83dd634954ec46d
-      internalID: 1503531622
+      spriteID: 6a20dc57d02d02e43b501278a06ef762
+      internalID: 504068526
       vertices: []
       indices: 
       edges: []
@@ -217,7 +217,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cecac8119c5f2e341b4ebd489df3183c
+    spriteID: 3d112752446a92642b8c53607b91df8a
     internalID: 0
     vertices: []
     indices: 
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hood_attacksprite1_0: 963381235
-      hood_attacksprite1_1: -1649790935
-      hood_attacksprite1_2: -294648914
-      hood_attacksprite1_3: -871925431
-      hood_attacksprite1_4: 1503531622
+      hood_attacksprite1_0: 1263905539
+      hood_attacksprite1_1: 675277606
+      hood_attacksprite1_2: -448279571
+      hood_attacksprite1_3: -2078048059
+      hood_attacksprite1_4: 504068526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
