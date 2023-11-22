@@ -10,6 +10,7 @@ public class PlayerInputs : MonoBehaviour
     public bool jumpButton;
     public bool keepJumping;
     public bool attack;
+    public bool runButton;
     bool cooldown;
 
     // Start is called before the first frame update
@@ -33,7 +34,8 @@ public class PlayerInputs : MonoBehaviour
         if (!cooldown)
         {
             JumpInput();
-        }      
+        }
+        RunInput();
         AttackInput();
     }
 
@@ -76,6 +78,18 @@ public class PlayerInputs : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             attack = false;
+        }
+    }
+
+    void RunInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) 
+        {
+            runButton = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            runButton = false;
         }
     }
 }
