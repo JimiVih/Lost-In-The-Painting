@@ -21,19 +21,14 @@ public class PlayerMovement : MonoBehaviour
     public float radius;
     public float gravityMultiplier;
     public float jumpTime;
-    public float walkingSpeed;
-    public float runningSpeed;
-    float moveSpeed;
+    public float moveSpeed;
     public float jumpForce;
     float originalMoveSpeed;
-
-    int canRun;
 
     public bool isGrounded;
     bool jumpButton;
     bool keepJumping;
     bool facingRight = true;
-    bool running;
 
 
     Vector3 moveDirection;
@@ -80,20 +75,6 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded)
         {
             velocity.y += playerFallSpeed * Time.deltaTime;
-        }
-
-        if (!running || isGrounded)
-        {
-            canRun = 0;
-            animator.SetInteger("canRun", canRun);
-            moveSpeed = walkingSpeed;
-        }
-        if (running && isGrounded)
-        {
-            canRun = 1;
-            animator.SetInteger("canRun", canRun);
-            moveSpeed = runningSpeed;
-            
         }
 
         PlayerJump();
@@ -149,6 +130,6 @@ public class PlayerMovement : MonoBehaviour
     {
         jumpButton = playerInputs.jumpButton;  
         keepJumping = playerInputs.keepJumping;
-        running = playerInputs.runButton;
+
     }
 }
