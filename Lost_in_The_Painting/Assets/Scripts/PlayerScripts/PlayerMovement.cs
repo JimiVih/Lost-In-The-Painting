@@ -85,13 +85,13 @@ public class PlayerMovement : MonoBehaviour
         if (!running || isGrounded)
         {
             canRun = 0;
-            animator.SetInteger("canRun", canRun);
+            animator.SetFloat("canRun", canRun);
             moveSpeed = walkingSpeed;
         }
         if (running && isGrounded)
         {
             canRun = 1;
-            animator.SetInteger("canRun", canRun);
+            animator.SetFloat("canRun", canRun);
             moveSpeed = runningSpeed;
             
         }
