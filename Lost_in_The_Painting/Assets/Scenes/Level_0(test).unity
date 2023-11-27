@@ -767,6 +767,16 @@ PrefabInstance:
       propertyPath: radius
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5779458732649132898, guid: eb0612e104f0f244b9e4b7cea099b054,
+        type: 3}
+      propertyPath: runningSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779458732649132898, guid: eb0612e104f0f244b9e4b7cea099b054,
+        type: 3}
+      propertyPath: walkingSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
