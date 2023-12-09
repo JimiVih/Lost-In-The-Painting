@@ -6,8 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerInputs playerInputs;
     PlayerAttack playerAttack;
+    HealthSystem_Player healthSystem;
+
     CharacterController controller;
     Animator animator;
+
     public Transform groundCheck;
     public Transform playerSprite;
     public LayerMask whatIsGround;
@@ -34,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     bool keepJumping;
     bool facingRight = true;
     bool running;
+    bool damageTaken;
+    bool cooldown;
 
 
     Vector3 moveDirection;
@@ -41,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        healthSystem = GetComponent<HealthSystem_Player>();
         originalMoveSpeed = moveSpeed;
         playerAttack = GetComponent<PlayerAttack>();
         animator = GetComponentInChildren<Animator>();
@@ -55,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = playerInputs.moveDirection;
         HandleInputBools();        
         HandleAll();
+
+
     }
 
     void HandleAll()
@@ -82,19 +90,29 @@ public class PlayerMovement : MonoBehaviour
             velocity.y += playerFallSpeed * Time.deltaTime;
         }
 
-        if (!running || isGrounded)
+        if (!damageTaken)
+        {
+            if (!running || isGrounded)
+            {
+                canRun = 0;
+                animator.SetFloat("canRun", canRun);
+                moveSpeed = walkingSpeed;
+            }
+            if (running && isGrounded)
+            {
+                canRun = 1;
+                animator.SetFloat("canRun", canRun);
+                moveSpeed = runningSpeed;
+
+            }
+        }
+        if (damageTaken || cooldown)
         {
             canRun = 0;
             animator.SetFloat("canRun", canRun);
-            moveSpeed = walkingSpeed;
+            moveSpeed = 3;
         }
-        if (running && isGrounded)
-        {
-            canRun = 1;
-            animator.SetFloat("canRun", canRun);
-            moveSpeed = runningSpeed;
-            
-        }
+        
 
         PlayerJump();
 
@@ -150,5 +168,8 @@ public class PlayerMovement : MonoBehaviour
         jumpButton = playerInputs.jumpButton;  
         keepJumping = playerInputs.keepJumping;
         running = playerInputs.runButton;
+        damageTaken = healthSystem.damageTaken;
+        cooldown = playerAttack.cooldown;
+        
     }
 }
