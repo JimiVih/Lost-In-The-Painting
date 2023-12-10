@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    GameMaster gm;
     PlayerMovement p_Move;
     PlayerAnimHandler p_AnimHandler;
     PlayerAttack p_Attack;
@@ -12,8 +13,17 @@ public class PlayerManager : MonoBehaviour
 
     bool p_IsDead;
 
+    private void Awake()
+    {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+
+        transform.position = gm.lastCheckpointPos;
+    }
+
     private void Start()
     {
+    
+
         p_Move = GetComponent<PlayerMovement>();
         p_Attack = GetComponent<PlayerAttack>();
         p_Health = GetComponent<HealthSystem_Player>();

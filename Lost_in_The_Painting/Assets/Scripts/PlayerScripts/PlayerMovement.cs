@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     bool running;
     bool damageTaken;
     bool cooldown;
+    bool cantFlip;
 
 
     Vector3 moveDirection;
@@ -69,7 +70,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Movement();
-        FlipPlayer();
+        if (!cantFlip)
+        {
+            FlipPlayer();
+        }
+        
 
             
         
@@ -98,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("canRun", canRun);
                 moveSpeed = walkingSpeed;
             }
-            if (running && isGrounded)
+            if (running && isGrounded && !cantFlip)
             {
                 canRun = 1;
                 animator.SetFloat("canRun", canRun);
@@ -170,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         running = playerInputs.runButton;
         damageTaken = healthSystem.damageTaken;
         cooldown = playerAttack.cooldown;
+        cantFlip = playerInputs.controlButton;
         
     }
 }

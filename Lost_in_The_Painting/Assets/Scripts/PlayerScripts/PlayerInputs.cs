@@ -11,6 +11,7 @@ public class PlayerInputs : MonoBehaviour
     public bool keepJumping;
     public bool attack;
     public bool runButton;
+    public bool controlButton;
     bool cooldown;
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class PlayerInputs : MonoBehaviour
         }
         RunInput();
         AttackInput();
+        StopFlipInput();
     }
 
     //reads Horizontal and Vertical inputs that are taken by the "moveDirection" Vector3
@@ -90,6 +92,18 @@ public class PlayerInputs : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             runButton = false;
+        }
+    }
+
+    void StopFlipInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            controlButton = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            controlButton = false;
         }
     }
 }

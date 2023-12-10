@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour
     public float timeCounter;
     public float timerAmount;
 
+    public float damageAmount;
+
     bool attack;
     public bool cooldown;
     // Start is called before the first frame update
@@ -38,21 +40,27 @@ public class PlayerAttack : MonoBehaviour
         if (!cooldown && attack && playerMovement.isGrounded)
         {
             animator.SetTrigger("Attack");
-            attackHitbox.enabled = false;
+            attackHitbox.enabled = true;
             cooldown = true;
         }
     }
+
+    public void DoDamage(Enemy_healthsystem e_Health)
+    {
+        e_Health.TakeDamage(damageAmount);
+    }
+
     void CooldownTimer()
     {
         if (cooldown)
         {
-            Debug.Log("cooldown started");
+            
             timeCounter -= Time.deltaTime;
             if(timeCounter <= 0)
             {
-                Debug.Log("cooldown ended");
+                
                 timeCounter = timerAmount;
-                attackHitbox.enabled = true;
+                attackHitbox.enabled = false;
                 cooldown = false;
             }
         }
