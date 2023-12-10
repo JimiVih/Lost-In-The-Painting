@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,16 +34,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,18 +108,194 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hood_death2sprite_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd32d5601c652804f92814620dcbe167
+      internalID: -568632181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b8f94120158694897fe5df75983598
+      internalID: -93236257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_2
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734dc121f2ef24c479acdcddff479c54
+      internalID: 1668367320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75c780c4c3790c47b48aa4d9eecfe5e
+      internalID: -2076091263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0212012df9a9447aaae3e61268eb40
+      internalID: 437606784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c13268bec113e24aa06be6dc12e2a8b
+      internalID: 320527050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd9fcac3b6b5f446a0bf7afee8d0e99
+      internalID: 490082990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hood_death2sprite_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1769bc4b1596d4593a4fc0801ab5e1
+      internalID: 976891230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4fd6e45c8cb099147846a63cf625cedb
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hood_death2sprite_0: -568632181
+      hood_death2sprite_1: -93236257
+      hood_death2sprite_2: 1668367320
+      hood_death2sprite_3: -2076091263
+      hood_death2sprite_4: 437606784
+      hood_death2sprite_5: 320527050
+      hood_death2sprite_6: 490082990
+      hood_death2sprite_7: 976891230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

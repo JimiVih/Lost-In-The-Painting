@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
     PlayerAttack playerAttack;
+    HealthSystem_Player p_health;
+
     public Vector3 moveDirection;
 
     public bool jumpButton;
@@ -13,18 +15,26 @@ public class PlayerInputs : MonoBehaviour
     public bool runButton;
     public bool controlButton;
     bool cooldown;
+    bool stopInputs = false;
 
     // Start is called before the first frame update
     void Start()
     {
         playerAttack = GetComponent<PlayerAttack>();
+        p_health = GetComponent<HealthSystem_Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
         cooldown = playerAttack.cooldown;
-        HandleAllInputs();
+        stopInputs = p_health.stopInputs;
+
+        if (!stopInputs)
+        {
+            HandleAllInputs();
+        }
+        
     }
 
     void HandleAllInputs()
