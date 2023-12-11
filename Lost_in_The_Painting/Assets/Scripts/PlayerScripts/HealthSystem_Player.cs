@@ -46,7 +46,6 @@ public class HealthSystem_Player : MonoBehaviour
         {
             animator.SetTrigger("GetHit");
             damageTaken = true;
-            stopInputs = true;
             StartCoroutine(Recovery(recoveryTime));
             print("Damage taken");
         }
@@ -73,12 +72,18 @@ public class HealthSystem_Player : MonoBehaviour
             damageTaken = true;
             stopInputs = true;
             playerLight.SetActive(false);
-            StartCoroutine(Recovery(spikeRecoveryTime));
+            StartCoroutine(RecoveryFromSpike(spikeRecoveryTime));
             print("Damage taken");
         }
     }
 
     IEnumerator Recovery(float recoveryTime)
+    {
+        yield return new WaitForSeconds(recoveryTime);
+        damageTaken = false;
+    }
+
+    IEnumerator RecoveryFromSpike(float recoveryTime)
     {
         yield return new WaitForSeconds(recoveryTime);
         animator.SetTrigger("Spawn");
