@@ -7,6 +7,7 @@ public class HealthSystem_Player : MonoBehaviour
 {
     Animator animator;
 
+    public GameObject playerLight;
     public Image healthBar;
 
     float maxHealth = 1;
@@ -52,9 +53,9 @@ public class HealthSystem_Player : MonoBehaviour
         
     }
 
-    public void TakeDamageFromSpikes()
+    public void TakeDamageFromSpikes(float damageAmount)
     {
-        health -= .3f;
+        health -= damageAmount;
 
         if (health <= 0)
         {
@@ -62,12 +63,16 @@ public class HealthSystem_Player : MonoBehaviour
             stopInputs = true;
             animator.SetTrigger("Spike");
             animator.SetBool("IsDead", true);
+            playerLight.SetActive(false);
             print("You are dead!");
         }
         if (!isDead && !damageTaken)
         {
             animator.SetTrigger("Spike");
+            animator.SetBool("IsDead", true);
             damageTaken = true;
+            stopInputs = true;
+            playerLight.SetActive(false);
             StartCoroutine(Recovery(spikeRecoveryTime));
             print("Damage taken");
         }
@@ -80,5 +85,6 @@ public class HealthSystem_Player : MonoBehaviour
         animator.SetBool("IsDead", false);
         stopInputs = false;
         damageTaken = false;
+        playerLight.SetActive(true);
     }
 }

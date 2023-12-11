@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     HealthSystem_Player p_Health;
 
     bool p_IsDead;
+    bool stopInput;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
     
-
+        p_AnimHandler = GetComponent<PlayerAnimHandler>();
         p_Move = GetComponent<PlayerMovement>();
         p_Attack = GetComponent<PlayerAttack>();
         p_Health = GetComponent<HealthSystem_Player>();
@@ -32,12 +33,18 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         p_IsDead = p_Health.isDead;
-
-        if (p_IsDead)
+        stopInput = p_Health.stopInputs;
+        if (p_IsDead || stopInput)
         {
             p_Move.enabled = false;
             p_Attack.enabled = false;
             p_AnimHandler.enabled = false;
+        }
+        if (!stopInput)
+        {
+            p_Move.enabled = true;
+            p_Attack.enabled = true;
+            p_AnimHandler.enabled = true;
         }
     }
 }

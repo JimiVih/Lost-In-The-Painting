@@ -132,14 +132,14 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("jump");
             velocity.y = Mathf.Sqrt(jumpForce * -2f * playerFallSpeed);
             gravityMultiplier = 3;
-            print("JUMPING!");
+
         }
 
         if(keepJumping && jumpTimeCounter > 0)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * playerFallSpeed);
             jumpTimeCounter -= Time.deltaTime;
-            print("Keep Jumping!");
+
         }
         else
         {

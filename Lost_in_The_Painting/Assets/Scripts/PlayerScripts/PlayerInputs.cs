@@ -62,7 +62,7 @@ public class PlayerInputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpButton = true;
-            print("Jump!");
+
         }
         else
         {
