@@ -8,6 +8,10 @@ TagManager:
   - StaticCamera
   - EnemyHitbox
   - GM
+  - GameOverUI
+  - Continue
+  - Panel
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HealthSystem_Player : MonoBehaviour
 {
+    GameOver_script gameOverSCRIPT;
+
     Animator animator;
 
     public GameObject playerLight;
@@ -19,6 +21,11 @@ public class HealthSystem_Player : MonoBehaviour
     public bool isDead = false;
     public bool stopInputs;
 
+    private void Awake()
+    {
+        
+        gameOverSCRIPT = GameObject.FindAnyObjectByType<GameOver_script>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +47,7 @@ public class HealthSystem_Player : MonoBehaviour
         {
             isDead = true;
             animator.SetTrigger("Die");
+            gameOverSCRIPT.GameOVER();
             print("You are dead!");
         }
         if (!isDead && !damageTaken)
@@ -64,6 +72,7 @@ public class HealthSystem_Player : MonoBehaviour
             animator.SetBool("IsDead", true);
             playerLight.SetActive(false);
             print("You are dead!");
+            gameOverSCRIPT.GameOVER();
         }
         if (!isDead && !damageTaken)
         {
