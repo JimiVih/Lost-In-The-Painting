@@ -5,7 +5,12 @@ using TMPro;
 
 public class ScreenDialogManager : MonoBehaviour
 {
+    public HealthSystem_Player healthSystem;
+
     public Animator animator;
+    Animator panelAnimator;
+
+    public Transform panel;
 
     public TMP_Text dialog;
     public TMP_Text instructions;
@@ -15,11 +20,10 @@ public class ScreenDialogManager : MonoBehaviour
     public float waitTime;//wait time before user can click mouse button;
 
     bool canClick;
+
     private void Start()
     {
-        canClick = false;
-        currentText = 0;
-        StartCoroutine(WriteText());
+        panelAnimator = panel.GetComponent<Animator>();
     }
 
     private void Update()
@@ -32,6 +36,13 @@ public class ScreenDialogManager : MonoBehaviour
                 canClick = false;
             }
         }
+    }
+
+    public void StartIntro()
+    {
+        canClick = false;
+        currentText = 0;
+        StartCoroutine(WriteText());
     }
 
     IEnumerator WriteText()
@@ -56,10 +67,15 @@ public class ScreenDialogManager : MonoBehaviour
         instructions.text = "";
         animator.SetBool("FadeIn", false);
         yield return new WaitForSeconds(4);
-        if(currentText > text.Length)
+        if(currentText > text.Length - 1)
         {
-
+            panelAnimator.SetTrigger("FadeIn");
+            healthSystem.stopInputs = false;
         }
-        StartCoroutine(WriteText());
+        else
+        {
+            StartCoroutine(WriteText());
+        }
+        
     }
 }

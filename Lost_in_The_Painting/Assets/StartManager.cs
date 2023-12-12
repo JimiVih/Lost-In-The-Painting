@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class StartManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public ScreenDialogManager introDialog;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartIntro()
     {
-        
+        introDialog.StartIntro();
+        print("StartIntro");
     }
 }

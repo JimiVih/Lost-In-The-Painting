@@ -7,7 +7,7 @@ using TMPro;
 public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
-    public GameObject UI;
+
     public Vector3 lastCheckpointPos;
 
     

@@ -18,7 +18,6 @@ public class PlayerManager : MonoBehaviour
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 
-        transform.position = gm.lastCheckpointPos;
     }
 
     private void Start()
@@ -46,5 +45,19 @@ public class PlayerManager : MonoBehaviour
             p_Attack.enabled = true;
             p_AnimHandler.enabled = true;
         }
+
+        
     }
+
+    public void EnableInputs()
+    {
+        StartCoroutine(enableInp());
+    }
+
+    IEnumerator enableInp()
+    {
+        yield return new WaitForSeconds(2);
+        transform.GetComponent<HealthSystem_Player>().stopInputs = false;
+    }
+
 }

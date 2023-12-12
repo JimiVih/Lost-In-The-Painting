@@ -36,8 +36,8 @@ public class GameOver_script : MonoBehaviour
     IEnumerator StartAgain()
     {
         panel.gameObject.SetActive(true);
-        GameOver.GetComponent<Animator>().SetBool("FadeIn", false);
-        panel.GetComponent<Animator>().SetBool("fade", true);
+        GameOver.GetComponent<Animator>().SetTrigger("FadeOut");
+        panel.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -45,7 +45,7 @@ public class GameOver_script : MonoBehaviour
     IEnumerator GameOverTEXT()
     {
         GameOver.gameObject.SetActive(true);
-        GameOver.GetComponent<Animator>().SetBool("FadeIn", true);
+        GameOver.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(5);
         click.gameObject.SetActive(true);
         canClick = true;
