@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     CharacterController controller;
     Animator animator;
+    public AudioSource audio;
 
     public Transform groundCheck;
     public Transform playerSprite;
@@ -129,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && jumpButton)
         {
+            audio.Play();
             animator.SetTrigger("jump");
             velocity.y = Mathf.Sqrt(jumpForce * -2f * playerFallSpeed);
             gravityMultiplier = 3;

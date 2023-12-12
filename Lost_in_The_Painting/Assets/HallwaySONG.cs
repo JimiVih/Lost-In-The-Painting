@@ -4,17 +4,60 @@ using UnityEngine;
 
 public class HallwaySONG : MonoBehaviour
 {
-    public Animator BlimBlom, Bass, Violin, Horns;
+    public Animator animator;
+    public AudioSource audio;
+    public Animator[] animators;
+    public AudioSource[] audioSources;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool isParent;
+    public bool isEnd;
+
+    int i;
+
+    private void Start()
     {
-        
+        if(isParent || isEnd)
+        {
+            return;
+        }
+        else
+        {
+            animator = GetComponent<Animator>();
+            audio = GetComponent<AudioSource>();
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player"))
+        {
+            if (isEnd && i == 0) 
+            {
+                foreach (var animator in animators)
+                {
+                    animator.SetTrigger("DownFast");
+                }
+                i++;
+            }
+            if (!isParent && i == 0) 
+            {
+               
+               
+                    audio.mute = false;
+                    animator.SetTrigger("UpSlow");
+                i++;
+            }
+            if (isParent && i == 0) 
+            {
+                foreach(var audio in audioSources)
+                {
+                    audio.Play();
+                }
+                i++;
+            }
+        }
+       
         
     }
 }

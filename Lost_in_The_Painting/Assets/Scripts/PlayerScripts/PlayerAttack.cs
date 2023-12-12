@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     PlayerMovement playerMovement;
 
     Animator animator;
+    public AudioSource audioSource;
 
     public SphereCollider attackHitbox;
 
@@ -39,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!cooldown && attack && playerMovement.isGrounded)
         {
+            audioSource.Play();
             animator.SetTrigger("Attack");
             attackHitbox.enabled = true;
             cooldown = true;
