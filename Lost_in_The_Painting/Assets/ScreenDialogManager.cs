@@ -50,12 +50,7 @@ public class ScreenDialogManager : MonoBehaviour
         
         dialog.text = "";
         animator.SetBool("FadeIn", true);
-        foreach (char c in text[currentText])
-        {
-            
-            dialog.text += c;
-            yield return new WaitForSeconds(writingSpeed);
-        }
+        dialog.text = text[currentText];
         currentText++;
         yield return new WaitForSeconds(waitTime);
         instructions.text = "Click Left Mouse";

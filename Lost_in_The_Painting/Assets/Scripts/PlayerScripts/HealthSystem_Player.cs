@@ -8,7 +8,7 @@ public class HealthSystem_Player : MonoBehaviour
     GameOver_script gameOverSCRIPT;
 
     Animator animator;
-    public AudioSource audio;
+    public AudioSource audioHit, audioDeath, audioSpikeDeath;
     public GameObject playerLight;
     public Image healthBar;
 
@@ -46,7 +46,8 @@ public class HealthSystem_Player : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
-            audio.Play();
+            audioHit.Play();
+            audioDeath.Play();
             isDead = true;
             animator.SetTrigger("Die");
             gameOverSCRIPT.GameOVER();
@@ -54,7 +55,7 @@ public class HealthSystem_Player : MonoBehaviour
         }
         if (!isDead && !damageTaken)
         {
-            audio.Play();
+            audioHit.Play();
             animator.SetTrigger("GetHit");
             damageTaken = true;
             StartCoroutine(Recovery(recoveryTime));
@@ -70,7 +71,8 @@ public class HealthSystem_Player : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
-            audio.Play();
+            audioSpikeDeath.Play();
+            audioDeath.Play();
             isDead = true;
             stopInputs = true;
             animator.SetTrigger("Spike");
@@ -81,7 +83,7 @@ public class HealthSystem_Player : MonoBehaviour
         }
         if (!isDead && !damageTaken)
         {
-            audio.Play();
+            audioSpikeDeath.Play();
             animator.SetTrigger("Spike");
             animator.SetBool("IsDead", true);
             damageTaken = true;
