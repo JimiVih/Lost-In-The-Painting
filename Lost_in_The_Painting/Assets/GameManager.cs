@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     IEnumerator FadeInPanel()
     {
         music.Play();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         panel.GetComponent<Animator>().SetTrigger("FadeIn");
     }
     

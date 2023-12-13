@@ -24,6 +24,8 @@ public class GameOver_script : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 StartCoroutine(StartAgain());
+                canClick = false;
+                click.gameObject.SetActive(false);
             }
         }
     }
