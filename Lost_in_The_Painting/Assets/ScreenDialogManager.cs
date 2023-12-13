@@ -6,6 +6,7 @@ using TMPro;
 public class ScreenDialogManager : MonoBehaviour
 {
     public HealthSystem_Player healthSystem;
+    public AudioSource music;
 
     public Animator animator;
     Animator panelAnimator;
@@ -64,6 +65,7 @@ public class ScreenDialogManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         if(currentText > text.Length - 1)
         {
+            music.Play();
             panelAnimator.SetTrigger("FadeIn");
             healthSystem.stopInputs = false;
         }

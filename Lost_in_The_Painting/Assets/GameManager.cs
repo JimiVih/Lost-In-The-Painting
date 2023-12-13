@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     StartManager startManager;
     HealthSystem_Player healthSystem;
 
+    public AudioSource music;
+
     public Transform Player;
 
     Vector3 checkpointPos;
@@ -92,6 +94,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeInPanel()
     {
+        music.Play();
         yield return new WaitForSeconds(0.5f);
         panel.GetComponent<Animator>().SetTrigger("FadeIn");
     }

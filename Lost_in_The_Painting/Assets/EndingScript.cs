@@ -92,6 +92,7 @@ public class EndingScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            healthSystem.stopInputs = true;
             StartCoroutine(FadeInPanel());
         }
     }

@@ -8,6 +8,7 @@ public class HealthSystem_Player : MonoBehaviour
     GameOver_script gameOverSCRIPT;
 
     Animator animator;
+    public Animator musicAnimator;
     public AudioSource audioHit, audioDeath, audioSpikeDeath;
     public GameObject playerLight;
     public Image healthBar;
@@ -46,6 +47,7 @@ public class HealthSystem_Player : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
+            musicAnimator.SetTrigger("DownFast");
             audioHit.Play();
             audioDeath.Play();
             isDead = true;
@@ -71,6 +73,7 @@ public class HealthSystem_Player : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
+            musicAnimator.SetTrigger("DownFast");
             audioSpikeDeath.Play();
             audioDeath.Play();
             isDead = true;
