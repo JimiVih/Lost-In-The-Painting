@@ -40,13 +40,13 @@ public class MenuManager : MonoBehaviour
 
     IEnumerator FadeAnimationStart()
     {
-        panel.GetComponent<Animator>().SetBool("fade", true);
+        panel.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(FadeTime);
         SceneManager.LoadScene("level_0");
     }
     IEnumerator FadeAnimationQuit()
     {
-        panel.GetComponent<Animator>().SetBool("fade", true);
+        panel.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(FadeTime);
         Application.Quit();
     }
